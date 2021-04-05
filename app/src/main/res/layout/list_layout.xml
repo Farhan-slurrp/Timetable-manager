@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_marginTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/ListName"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoe_ui"
+            android:text="List 1"
+            android:textColor="#333"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ListTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ListName"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/segoe_ui"
+            android:text="0.00am - 0.00am"
+            android:textColor="#B0222222"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/deleteBtn"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/back_button"
+            android:src="@drawable/ic_baseline_delete_outline_24"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="320dp" />
+
+        <ImageView
+            android:id="@+id/editBtn"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/back_button"
+            android:src="@drawable/ic_baseline_edit_24"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="275dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

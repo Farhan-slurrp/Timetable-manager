@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/close"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:text="X"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="240dp"
+        android:translationZ="100dp"
+        android:gravity="center"
+        android:background="#f00"/>
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="120dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="5dp"
+        android:paddingLeft="45dp"
+        android:layout_marginTop="-15dp"
+        android:text="Version: 1.0.0\nPublished: 2021\nDeveloped By: BSE UCYP"
+        android:textColor="#333"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

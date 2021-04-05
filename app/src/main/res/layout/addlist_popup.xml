@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="410dp"
+    android:layout_height="870dp"
+    android:layout_gravity="center">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/back_button"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:onClick="back"
+        android:text="BACK"
+        android:textColor="#1D436F"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/segoe_ui"
+        android:text="Event Name: "
+        android:textColor="#1D436F"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
+
+    <EditText
+        android:id="@+id/eventname"
+        android:layout_width="321dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="8dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/timeFrom"
+        android:layout_width="321dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:text="From..."
+        android:inputType="textPersonName"
+        android:paddingLeft="8dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/timeTo"
+        android:layout_width="321dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:text="To..."
+        android:inputType="textPersonName"
+        android:paddingLeft="8dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeFrom" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/segoe_ui"
+        android:text="Time: "
+        android:textColor="#1D436F"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventname" />
+
+    <ImageView
+        android:id="@+id/from"
+        android:layout_width="38dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeFrom"
+        app:layout_constraintEnd_toEndOf="@+id/timeFrom"
+        app:layout_constraintTop_toTopOf="@+id/timeFrom"
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@drawable/clock"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/to"
+        android:layout_width="38dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeTo"
+        app:layout_constraintEnd_toEndOf="@+id/timeTo"
+        app:layout_constraintTop_toTopOf="@+id/timeTo"
+        app:layout_constraintVertical_bias="0.526"
+        app:srcCompat="@drawable/clock"
+        tools:ignore="VectorDrawableCompat" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToList"
+        android:layout_width="241dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/add_button"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="ADD"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeTo" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addToList" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
