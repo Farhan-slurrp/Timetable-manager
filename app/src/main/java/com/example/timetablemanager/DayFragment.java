@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -149,6 +150,7 @@ public class DayFragment extends Fragment {
                 String [] timeList = Time.split(" ");
                 FromTime.setText(timeList[0] + " " + timeList[1]);
                 ToTime.setText(timeList[3] + " " + timeList[4]);
+
 
                 editDialog.show();
 
@@ -285,13 +287,19 @@ public class DayFragment extends Fragment {
                         TextView mFrom = addDialog.findViewById(R.id.timeFrom);
                         TextView mTo = addDialog.findViewById(R.id.timeTo);
 
-                        String event = mEvent.getText().toString();
-                        String mTime = mFrom.getText().toString() + " - " + mTo.getText().toString();
+                        if(mFrom.getText().toString().equals("From...") ||
+                                mTo.getText().toString().equals("To...") ||
+                                mEvent.getText().toString().equals("")) {
+                            Toast.makeText(container.getContext(), "Time and event name required", Toast.LENGTH_SHORT).show();
+                        } else {
+                            String event = mEvent.getText().toString();
+                            String mTime = mFrom.getText().toString() + " - " + mTo.getText().toString();
 
-                        listItem.add(new ListItem(event, mTime));
-                        mAdapter.notifyItemInserted(listItem.size());
-                        saveData(container.getContext());
-                        addDialog.dismiss();
+                            listItem.add(new ListItem(event, mTime));
+                            mAdapter.notifyItemInserted(listItem.size());
+                            saveData(container.getContext());
+                            addDialog.dismiss();
+                        }
                     }
                 });
             }
