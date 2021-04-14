@@ -129,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity {
                             data[1] = email;
                             data[2] = username;
                             data[3] = password;
-                            PutData putData = new PutData("http://192.168.43.33/Timetable/signup.php", "POST", field, data);
+                            PutData putData = new PutData("http://localhost/Timetable/signup.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
