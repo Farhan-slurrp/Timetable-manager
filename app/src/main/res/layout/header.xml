@@ -10,7 +10,7 @@
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="137dp"
         android:layout_height="139dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="38dp"
         android:src="@drawable/robot" />
 
