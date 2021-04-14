@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.timetablemanager.DayFragment;
-import com.example.timetablemanager.MainActivity;
 import com.example.timetablemanager.R;
 
 /**
@@ -21,29 +20,31 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.monday, R.string.tuesday,R.string.wednesday,R.string.thursday,R.string.friday,R.string.saturday,R.string.sunday};
     private final Context mContext;
+    private final String mUsername;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public SectionsPagerAdapter(Context context, FragmentManager fm, String username) {
         super(fm);
         mContext = context;
+        this.mUsername = username;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new DayFragment().newInstance("Monday", "mon");
+                return new DayFragment().newInstance(mUsername, "mon");
             case 1:
-                return new DayFragment().newInstance("Tuesday", "tue");
+                return new DayFragment().newInstance(mUsername, "tue");
             case 2:
-                return new DayFragment().newInstance("Wednesday", "wed");
+                return new DayFragment().newInstance(mUsername, "wed");
             case 3:
-                return new DayFragment().newInstance("Thursday", "thu");
+                return new DayFragment().newInstance(mUsername, "thu");
             case 4:
-                return new DayFragment().newInstance("Friday", "fri");
+                return new DayFragment().newInstance(mUsername, "fri");
             case 5:
-                return new DayFragment().newInstance("Saturday", "sat");
+                return new DayFragment().newInstance(mUsername, "sat");
             case 6:
-                return new DayFragment().newInstance("Sunday", "sun");
+                return new DayFragment().newInstance(mUsername, "sun");
             default:
                 return new PlaceholderFragment();
         }

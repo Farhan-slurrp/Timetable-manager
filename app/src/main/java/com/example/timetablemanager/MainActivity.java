@@ -2,15 +2,9 @@ package com.example.timetablemanager;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.NonNull;
@@ -18,20 +12,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.timetablemanager.ui.main.SectionsPagerAdapter;
-import com.vishnusivadas.advanced_httpurlconnection.FetchData;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -46,7 +34,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+
+        username = getIntent().getStringExtra(LoginActivity.USERNAME_EXTRA);
+
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), username);
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
@@ -75,13 +66,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            }
 //        });
 
-        username = getIntent().getStringExtra(LoginActivity.USERNAME_EXTRA);
+        View headerLayout = navView.inflateHeaderView(R.layout.header);
+        TextView userName = headerLayout.findViewById(R.id.username);
 
-            String tag = "android:switcher:" + R.id.view_pager + ":" + viewPager.getCurrentItem();
-            DayFragment f = (DayFragment) getSupportFragmentManager().findFragmentByTag(tag);
-            if(f != null) {
-                f.getUsername(username);
-            }
+        userName.setText(username);
+
+//        String tag = "android:switcher:" + R.id.view_pager + ":" + viewPager.getCurrentItem();
+//        DayFragment f = (DayFragment) getSupportFragmentManager().findFragmentByTag(tag);
+//        if(f != null) {
+//            f.setUsername(username);
+//        }
 
     }
 

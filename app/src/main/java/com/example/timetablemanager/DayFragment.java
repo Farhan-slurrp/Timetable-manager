@@ -42,7 +42,6 @@ public class DayFragment extends Fragment {
     Dialog addDialog, editDialog;
     int fHour, fMinute, tHour, tMinute;
     ArrayList<ListItem> listItem;
-    String mUsername = "";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -99,7 +98,7 @@ public class DayFragment extends Fragment {
 
         SharedPreferences sharedPreferences = container.getContext().getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString("task list " + mParam2 + mUsername, null);
+        String json = sharedPreferences.getString("task list " + mParam2 + mParam1, null);
         Type type = new TypeToken<ArrayList<ListItem>>() {}.getType();
         listItem = gson.fromJson(json, type);
 
@@ -290,7 +289,7 @@ public class DayFragment extends Fragment {
                         if(mFrom.getText().toString().equals("From...") ||
                                 mTo.getText().toString().equals("To...") ||
                                 mEvent.getText().toString().equals("")) {
-                            Toast.makeText(container.getContext(), "Time and event name required", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(container.getContext(), "Event name and time required", Toast.LENGTH_SHORT).show();
                         } else {
                             String event = mEvent.getText().toString();
                             String mTime = mFrom.getText().toString() + " - " + mTo.getText().toString();
@@ -335,11 +334,7 @@ public class DayFragment extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
         String json = gson.toJson(listItem);
-        editor.putString("task list " + mParam2 + mUsername, json);
+        editor.putString("task list " + mParam2 + mParam1, json);
         editor.apply();
-    }
-
-    public void getUsername(String username) {
-        mUsername = username;
     }
 }

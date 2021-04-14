@@ -8,11 +8,11 @@
     android:background="@drawable/header">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="86dp"
-        android:layout_height="68dp"
+        android:layout_width="137dp"
+        android:layout_height="139dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/user" />
+        android:layout_marginTop="38dp"
+        android:src="@drawable/robot" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="313dp"
@@ -20,32 +20,33 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/username"
-            android:layout_width="117dp"
-            android:layout_height="34dp"
-            android:fontFamily="@font/segoe_ui"
-            android:text="Dear user"
-            android:textColor="#fff"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.096"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="80dp"
             android:fontFamily="@font/segoe_ui_bold"
             android:text="Hello,"
             android:textColor="#fff"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintHorizontal_bias="0.008"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="117dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/segoe_ui"
+            android:text="Dear user"
+            android:textColor="#fff"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
