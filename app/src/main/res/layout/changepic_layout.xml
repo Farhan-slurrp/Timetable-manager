@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/change"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="  CHANGE PICTURE"
+        android:drawableLeft="@drawable/img"
+        android:gravity="center_vertical"
+        android:padding="11dp"
+        android:textColor="#4CAF50"
+        />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="  CANCEL"
+        android:drawableLeft="@drawable/cancel"
+        android:gravity="center_vertical"
+        android:padding="11dp"
+        android:textColor="#f00" />
+
+</LinearLayout>

@@ -1,32 +1,48 @@
 package com.example.timetablemanager;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.timetablemanager.ui.main.SectionsPagerAdapter;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.URI;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int RESULT_LOAD_IMAGE = 1;
 
     DrawerLayout drawerLayout;
     NavigationView navView;
+    Dialog changePict;
     Toolbar toolbar;
     String username;
+    ImageView Picture;
 //    ImageView menu;
 //    Dialog About;
 
@@ -77,6 +93,56 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            f.setUsername(username);
 //        }
 
+        //set dialog box
+        changePict = new Dialog(MainActivity.this);
+        changePict.setContentView(R.layout.changepic_layout);
+
+        Picture = headerLayout.findViewById(R.id.pict);
+
+        //Set header profile picture dialog box
+        CardView ProfPict = headerLayout.findViewById(R.id.profpict);
+
+        ProfPict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                changePict.findViewById(R.id.change).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                        photoPickerIntent.setType("image/*");
+                        startActivityForResult(photoPickerIntent, RESULT_LOAD_IMAGE );
+                        changePict.dismiss();
+                    }
+                });
+
+                changePict.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        changePict.dismiss();
+                    }
+                });
+
+                changePict.show();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
+            try {
+                Uri imageUri = data.getData();
+                InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                Picture.setImageBitmap(selectedImage);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

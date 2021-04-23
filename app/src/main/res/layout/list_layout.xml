@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/ListName"
-            android:layout_width="258dp"
+            android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/segoe_ui"
             android:text="List 1"
@@ -52,7 +52,16 @@
             android:background="@drawable/back_button"
             android:src="@drawable/ic_baseline_edit_24"
             android:layout_marginTop="11dp"
-            android:layout_marginLeft="275dp" />
+            android:layout_marginLeft="280dp" />
+
+        <ImageView
+            android:id="@+id/alarm"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/back_button"
+            android:src="@drawable/notif_off"/>
 
     </RelativeLayout>
 

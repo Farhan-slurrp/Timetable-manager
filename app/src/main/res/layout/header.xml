@@ -7,12 +7,21 @@
     android:orientation="horizontal"
     android:background="@drawable/header">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="137dp"
-        android:layout_height="139dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="38dp"
-        android:src="@drawable/robot" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profpict"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="74dp"
+        app:cardCornerRadius="40dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pict"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/profpict" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="313dp"
@@ -23,20 +32,20 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="84dp"
             android:fontFamily="@font/segoe_ui_bold"
             android:text="Hello,"
             android:textColor="#fff"
-            android:textSize="30sp"
+            android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.008"
+            app:layout_constraintHorizontal_bias="0.067"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/username"
-            android:layout_width="117dp"
-            android:layout_height="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/segoe_ui"
             android:text="Dear user"
@@ -44,7 +53,7 @@
             android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
